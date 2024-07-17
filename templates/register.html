@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+<section id="contact" class="contact section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2>Регистрация</h2>
+    </div>
+    <form method="POST" action="{{ url_for('register') }}">
+      <div class="form-group">
+        <label for="exampleInputUsername">Username</label>
+        <input type="text" name="username" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Введите ваш username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email-адрес</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш email">
+        <small id="emailHelp" class="form-text text-muted">Мы не распространяем Ваш email.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Пароль</label>
+        <input type="password" name="password_hash" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Повторите пароль</label>
+        <input type="password" name="password_hash2" class="form-control" id="exampleInputPassword2" placeholder="Повторите пароль">
+      </div>
+      <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
